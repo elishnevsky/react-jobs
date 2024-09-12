@@ -109,15 +109,4 @@ function JobPage({ onDeleteJob }) {
   );
 }
 
-async function jobLoader({ params }) {
-  try {
-    // api proxy is set in vite.config.js
-    const response = await fetch(`/api/jobs/${params.id}`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-export { JobPage as default, jobLoader };
+export default JobPage;

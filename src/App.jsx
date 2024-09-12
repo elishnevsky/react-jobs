@@ -7,12 +7,23 @@ import {
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import JobsPage from "./pages/JobsPage";
-import JobPage, { jobLoader } from "./pages/JobPage";
+import JobPage from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
+  async function jobLoader({ params }) {
+    try {
+      // api proxy is set in vite.config.js
+      const response = await fetch(`/api/jobs/${params.id}`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   async function handleAddJob(newJob) {
     const response = await fetch("/api/jobs", {
       method: "POST",
