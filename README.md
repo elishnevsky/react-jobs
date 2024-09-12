@@ -1,6 +1,6 @@
 # React Jobs
 
-Run the server and the client in separate terminals
+Clone the repo and run `npm install` first. Then run the server and the client in separate terminals.
 
 Server
 
