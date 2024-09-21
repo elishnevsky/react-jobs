@@ -18,3 +18,4 @@ API proxy is configured in vite.config.js
 
 ## Todo
 - Update routes configuration
+- Use React Query for data access
